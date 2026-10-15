@@ -1,0 +1,62 @@
+{
+  "name": "lora_r2_qv",
+  "label": "LoRA r=2 (attention q,v)",
+  "method": "lora",
+  "r": 2,
+  "target_modules": [
+    "q_lin",
+    "v_lin"
+  ],
+  "lr": 0.0005,
+  "total_params": 66399744,
+  "trainable_params": 632070,
+  "lora_params": 36864,
+  "trainable_pct": 0.9519163206412362,
+  "artifact_mb": 2.420900344848633,
+  "train_time_s": 1711.4761216640472,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.2423533220291139,
+      "val_accuracy": 0.698,
+      "val_macro_f1": 0.5949541900157833
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6533425316810608,
+      "val_accuracy": 0.809,
+      "val_macro_f1": 0.7664876532474764
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5078711808919907,
+      "val_accuracy": 0.8225,
+      "val_macro_f1": 0.7716371493530784
+    }
+  ],
+  "val": {
+    "epoch": 3,
+    "train_loss": 0.5078711808919907,
+    "val_accuracy": 0.8225,
+    "val_macro_f1": 0.7716371493530784
+  },
+  "test": {
+    "accuracy": 0.831,
+    "macro_f1": 0.7668071675061103,
+    "per_class_f1": {
+      "anger": 0.7842401500938087,
+      "fear": 0.7845804988662132,
+      "joy": 0.8981026001405481,
+      "love": 0.6357142857142857,
+      "sadness": 0.8535773710482529,
+      "surprise": 0.6446280991735537
+    }
+  },
+  "train_size": 3999,
+  "epochs": 3,
+  "batch_size": 32,
+  "max_len": 64,
+  "base_model": "distilbert-base-uncased",
+  "torch": "2.14.1+cpu",
+  "finished_at": "2026-10-15T00:19:51+00:00"
+}

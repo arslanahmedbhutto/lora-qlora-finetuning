@@ -1,0 +1,34 @@
+train 3,999 | val 2,000 | test 2,000 | device cpu
+== Head only (frozen encoder): 595,206 trainable (0.89%)
+   epoch 1: loss 1.4612  val acc 0.5240  (429s)
+   epoch 2: loss 1.2923  val acc 0.5430  (1033s)
+   epoch 3: loss 1.2387  val acc 0.5490  (1627s)
+   test acc 0.5475  macro-F1 0.3091
+== LoRA r=2 (attention q,v): 632,070 trainable (0.95%)
+train 3,999 | val 2,000 | test 2,000 | device cpu
+skip head_only (done)
+   epoch 1: loss 1.2424  val acc 0.6980  (617s)
+   epoch 2: loss 0.6533  val acc 0.8090  (1169s)
+   epoch 3: loss 0.5079  val acc 0.8225  (1711s)
+   test acc 0.8310  macro-F1 0.7668
+== LoRA r=8 (attention q,v): 742,662 trainable (1.12%)
+   epoch 1: loss 1.1411  val acc 0.7670  (541s)
+   epoch 2: loss 0.5569  val acc 0.8410  (1095s)
+   epoch 3: loss 0.4141  val acc 0.8590  (1638s)
+   test acc 0.8605  macro-F1 0.8014
+== LoRA r=32 (attention q,v): 1,185,030 trainable (1.77%)
+   epoch 1: loss 1.0307  val acc 0.7990  (543s)
+   epoch 2: loss 0.4409  val acc 0.8800  (1090s)
+   epoch 3: loss 0.2816  val acc 0.8920  (1634s)
+   test acc 0.8930  macro-F1 0.8375
+== LoRA r=8 (all linear layers): 1,258,758 trainable (1.88%)
+   epoch 1: loss 1.0065  val acc 0.8125  (738s)
+   epoch 2: loss 0.3659  val acc 0.8945  (1485s)
+   epoch 3: loss 0.2130  val acc 0.9085  (2621s)
+   test acc 0.9030  macro-F1 0.8510
+== Full fine-tuning: 66,958,086 trainable (100.00%)
+   epoch 1: loss 1.0932  val acc 0.8145  (1264s)
+   epoch 2: loss 0.2870  val acc 0.9170  (2543s)
+   epoch 3: loss 0.1437  val acc 0.9210  (3819s)
+   test acc 0.9150  macro-F1 0.8698
+TRAINING_DONE 
